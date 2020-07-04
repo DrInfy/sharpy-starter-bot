@@ -134,7 +134,7 @@ dmypy.json
 .vscode/
 
 # Project ignore
-.Bots/
-.publish/
-.games/
-.data/
+Bots/
+publish/
+games/
+data/

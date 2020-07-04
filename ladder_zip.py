@@ -23,8 +23,6 @@ common = [
     ("config.ini", None),
     (os.path.join("sharpy-sc2", "ladder.py"), "ladder.py"),
     ("ladderbots.json", None),
-    ("tactics", None),
-    ("managers", None),
 ]
 
 # Files or folders to be ignored from the archive.
@@ -34,7 +32,7 @@ ignored = [
 
 
 protoss_zip = LadderZip(
-    "ProtossSharpyExample", "Protoss", [("bot", None), (os.path.join("bot", "run.py"), "run.py")], common
+    "ProtossSharpyExample", "Protoss", [("protossbot", None), (os.path.join("protossbot", "run.py"), "run.py")], common
 )
 
 

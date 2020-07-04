@@ -1,0 +1,3 @@
+[submodule "sharpy-sc2"]
+	path = sharpy-sc2
+	url = https://github.com/DrInfy/sharpy-sc2.git

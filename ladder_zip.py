@@ -1,5 +1,4 @@
 # Script for creating Ladder Manager compatible Zip archives.
-# 7-Zip command line documentation https://sevenzip.osdn.jp/chm/cmdline/
 
 import os
 import argparse

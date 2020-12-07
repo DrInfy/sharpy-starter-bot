@@ -7,8 +7,20 @@ Starter bot using  [sharpy-sc2](https://github.com/DrInfy/sharpy-sc2/wiki) and [
 ## To run the bot vs ingame ai
 `python run_custom.py -m EverDreamLE -p1 protossbot -p2 ai`
 
-## To publish the bot for ladder
-`python ladder_zip.py`
+`python run_custom.py -m SubmarineLE -p1 zergbot -p2 ai`
+
+`python run_custom.py -m GoldenWallLE -p1 terranbot -p2 ai`
+
+Replays and logs will be in `games` folder.
+
+## To publish the bots for ladder
+to publish the bot(s) as ladder ready versions:
+`python ladder_zip.py [botname]`
+
+To publish the bot(s) as stand-alone executable:
+`python ladder_zip.py [botname] -e`
+
+published bot(s) will be in `publish folder
 
 ## To get coding assistance in PyCharm
 Mark sharpy-sc2 and sharpy-sc2/python directories as source roots.

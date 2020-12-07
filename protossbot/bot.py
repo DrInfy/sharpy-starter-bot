@@ -3,9 +3,10 @@ from typing import Callable, Tuple, List, Dict, Optional
 
 from sc2 import UnitTypeId
 from sharpy.knowledges import KnowledgeBot
-from sharpy.managers import ManagerBase, DataManager
+from sharpy.managers import ManagerBase
 
 # This imports all the usual components for protoss bots
+from sharpy.managers.extensions import DataManager, BuildDetector
 from sharpy.plans.protoss import *
 
 # This imports all the usual components for terran bots
@@ -30,15 +31,15 @@ class ProtossBot(KnowledgeBot):
 
     def configure_managers(self) -> Optional[List[ManagerBase]]:
         # self.knowledge.roles.role_count = 11
-        self.knowledge.roles.set_tag_each_iteration = True
+
         # Return your custom managers here:
-        return None
+        return [BuildDetector()]
 
     async def create_plan(self) -> BuildOrder:
         if self.build_name == "default":
             self.build_name = choice(list(self.builds.keys()))
 
-        self.knowledge.data_manager.set_build(self.build_name)
+        self.data_manager.set_build(self.build_name)
         return self.builds[self.build_name]()
 
     async def on_step(self, iteration):
@@ -47,12 +48,12 @@ class ProtossBot(KnowledgeBot):
         return await super().on_step(iteration)
 
     async def give_up(self):
-        if not self.conceded and self.knowledge.game_analyzer.been_predicting_defeat_for > 5:
+        if not self.conceded and self.game_analyzer.been_predicting_defeat_for > 5:
             # sc2ai phrase for leaving the game safely
             await self.chat_send("pineapple")
             self.conceded = True
 
-        if self.conceded and self.knowledge.game_analyzer.been_predicting_defeat_for > 10:
+        if self.conceded and self.game_analyzer.been_predicting_defeat_for > 10:
             # Leave the game
             await self.client.leave()
 

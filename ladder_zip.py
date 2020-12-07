@@ -34,9 +34,20 @@ protoss_zip = LadderZip(
     "ProtossSharpyExample", "Protoss", [("protossbot", None), (os.path.join("protossbot", "run.py"), "run.py")], common
 )
 
+terran_zip = LadderZip(
+    "TerranSharpyExample", "Terran", [("terranbot", None), (os.path.join("terranbot", "run.py"), "run.py")], common
+)
+
+zerg_zip = LadderZip(
+    "ZergSharpyExample", "Zerg", [("zergbot", None), (os.path.join("zergbot", "run.py"), "run.py")], common
+)
+
+
 
 zip_types = {
     "protoss": protoss_zip,
+    "terran": terran_zip,
+    "zerg": zerg_zip,
     # All
     "all": None,
 }

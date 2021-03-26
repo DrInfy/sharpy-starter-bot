@@ -4,7 +4,7 @@ from sc2 import Race
 from sc2.player import Bot
 from terranbot.bot import TerranBot
 
-bot = Bot(Race.Protoss, TerranBot())
+bot = Bot(Race.Terran, TerranBot())
 
 
 def main():

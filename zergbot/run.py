@@ -2,9 +2,9 @@ from ladder import run_ladder_game
 
 from sc2 import Race
 from sc2.player import Bot
-from protossbot.bot import ProtossBot
+from zergbot.bot import ZergBot
 
-bot = Bot(Race.Protoss, ProtossBot())
+bot = Bot(Race.Zerg, ZergBot())
 
 
 def main():

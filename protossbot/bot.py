@@ -55,6 +55,7 @@ class ProtossBot(KnowledgeBot):
 
         if self.conceded and self.game_analyzer.been_predicting_defeat_for > 10:
             # Leave the game
+            self.knowledge.print("Client leaving", "Surrender")
             await self.client.leave()
 
     def zealot_build(self) -> BuildOrder:
@@ -75,10 +76,11 @@ class ProtossBot(KnowledgeBot):
             ChronoBuilding(UnitTypeId.GATEWAY),
             GridBuilding(unit_type=UnitTypeId.PYLON, to_count=1, priority=True),
             GridBuilding(unit_type=UnitTypeId.GATEWAY, to_count=2, priority=True),
+            GridBuilding(unit_type=UnitTypeId.CYBERNETICSCORE, to_count=1, priority=True),
             Step(UnitExists(UnitTypeId.GATEWAY), AutoPylon()),
             BuildGas(20),
-            AutoWorker(),
             ProtossUnit(unit_type=UnitTypeId.SENTRY, priority=True),
+            AutoWorker(),
             Expand(10),
             self.create_common_strategy()
         )

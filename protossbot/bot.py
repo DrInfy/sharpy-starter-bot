@@ -1,7 +1,7 @@
 from random import choice
 from typing import Callable, Tuple, List, Dict, Optional
 
-from sc2 import UnitTypeId
+from sc2.ids.unit_typeid import UnitTypeId
 from sharpy.knowledges import KnowledgeBot
 from sharpy.managers import ManagerBase
 

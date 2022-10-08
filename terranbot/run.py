@@ -1,6 +1,6 @@
 from ladder import run_ladder_game
+from sc2.data import Race
 
-from sc2 import Race
 from sc2.player import Bot
 from terranbot.bot import TerranBot
 

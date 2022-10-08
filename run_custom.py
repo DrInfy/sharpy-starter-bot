@@ -2,9 +2,9 @@ import os
 import sub_module  # Important, do not remove!
 
 from protossbot.bot import ProtossBot
+from sc2.data import Race
 from terranbot.bot import TerranBot
 from zergbot.bot import ZergBot
-from sc2 import Race
 from sc2.player import Bot
 
 from bot_loader import GameStarter, BotDefinitions

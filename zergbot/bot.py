@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from sc2 import UnitTypeId
+from sc2.ids.unit_typeid import UnitTypeId
 from sharpy.combat.group_combat_manager import GroupCombatManager
 from sharpy.knowledges import SkeletonBot
 from sharpy.managers.core import *
